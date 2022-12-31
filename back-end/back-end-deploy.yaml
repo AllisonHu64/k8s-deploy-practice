@@ -18,7 +18,7 @@ spec:
         app: back-end-deploy
     spec:
       containers:
-      - image: back-end:1.2
+      - image: back-end:1.0
         name: back-end
         imagePullPolicy: Never
         ports:
@@ -27,8 +27,8 @@ spec:
           - name: RUN_ENV
             value: development
           - name: MONGO_DOMAIN
-            value: 172.16.226.252
+            value: mongo-service.default.svc.cluster.local
           - name: MONGO_PORT
-            value: '30001'
+            value: '27017'
         resources: {}
 status: {}
